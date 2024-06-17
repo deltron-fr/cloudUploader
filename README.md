@@ -1,1 +1,1 @@
-# cloudUploader
+This is a Bash-based CLI tool that allows users to quickly upload files to Azure Blob storage, providing a seamless uploading experience.

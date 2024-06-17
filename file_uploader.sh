@@ -2,12 +2,15 @@
 
 # This is a script to upload files to an Azure Blob storage Account, using the azure CLI
 
+# Load env variables
+source .env
+
 
 # Input necessary environment variables
 file_path=$1
-name_of_storage_account="$azure_storage_account"
-name_of_connection_string="$azure_connection_string"
-name_of_container=$cloud_storage
+name_of_storage_account="$AZURE_STORAGE_ACCOUNT"
+name_of_connection_string="$AZURE_CONNECTION_STRING"
+name_of_container="images"
 name_of_file=$2
 
 # Parse Command Line Arguments
@@ -27,4 +30,5 @@ fi
 # Upload the File
 az storage blob upload --account-name $name_of_storage_account --connection-string $name_of_connection_string --container-name $name_of_container --file $file_path --name $name_of_file
 
-echo "File has been uploaded to azure blob storage."
+if [ $? -eq 0 ]
+    echo "File has been uploaded to azure blob storage."
