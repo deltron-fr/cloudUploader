@@ -27,3 +27,4 @@ fi
 # Upload the File
 az storage blob upload --account-name $name_of_storage_account --connection-string $name_of_connection_string --container-name $name_of_container --file $file_path --name $name_of_file
 
+echo "File has been uploaded to azure blob storage."
